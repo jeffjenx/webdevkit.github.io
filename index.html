@@ -11,52 +11,49 @@ Web Developer's Toolkit
 </H2>
 <ADDRESS>
 <SCRIPT>
-data = "Email,Send Jeff an {1},jeff@{0}.net,mailto:,\
-Phone,Call or text Jeff's {1},+15867450213,tel:,\
-LinkedIn,Connect with Jeff on {1},{1}.com/in/{0},,\
-GitHub,Code with Jeff on {1},{1}.com/{0},,\
-Twitter,Tweet Jeff on {1},{1}.com/{0},,\
-Facebook,Follow Jeff on {1},{1}.com/{0},,\
-Stack Overflow,Help Jeff on {1},stackoverflow.com/users/1028949/{0},,\
-Reddit,Chat with Jeff on {1},{1}.com/u/{0},,\
-Instagram,Follow Jeff on {1},{1}.com/{0},,\
-Twitch,Stream with to Jeff on {1},{1}.com/{0},,\
-Untappd,Toast Jeff on {1},{1}.com/user/{0},,\
-YouTube,Watch Jeff's channel on {1},{1}.com/channel/UCiAGo--_-Jct1-6nmHyQwfQ,,\
-Xbox Live,Game with Jeff on {1},live.xbox.com/Profile?Gamertag={0},,\
-Good Ol' Games,Play with Jeff on {1},gog.com/u/{0},,\
-Amazon,Gift Jeff on {1},{1}.com/hz/wishlist/ls/2XMAQ685MAZ66,,\
-Patreon,Support Jeff on {1},{1}.com/{0},,\
-PayPal,Tip Jeff on {1},{1}.me/{0},,\
-Venmo,Join Jeff on {1},{1}.com/{0},,".split(",")
-replacements = new Array("webdevkit","this.service")
-addresses = new Array(Math.floor(data.length/4))
-for (a = 0; a < addresses.length; a++)
-  addresses[a] = new Address(data[a*4],data[a*4+1],data[a*4+2],data[a*4+3])
-function Address(service, label, url, protocol) {
-  this.service = service
-  this.label = label
+replacements = Array("webdevkit","this.service","Jeff")
+data = "Email,Send,jeff@{0}.net,mailto:,{2} an {1},\
+Phone,Call or Text,+15867450213,tel:,{2}'s {1},\
+LinkedIn,Connect with,{1}.com/in/{0},,,\
+GitHub,Code with,{1}.com/{0},,,\
+Twitter,Tweet,{1}.com/{0},,,\
+Facebook,Follow,{1}.com/{0},,,\
+Stack Overflow,Help,stackoverflow.com/users/1028949/{0},,,\
+Reddit,Chat with,{1}.com/u/{0},,,\
+Instagram,Follow,{1}.com/{0},,,\
+Twitch,Stream with,{1}.com/{0},,,\
+Untappd,Toast,{1}.com/user/{0},,,\
+YouTube,Watch,{1}.com/channel/UCiAGo--_-Jct1-6nmHyQwfQ,,{2}'s Channel on {1},\
+Xbox Live,Game with,live.xbox.com/Profile?Gamertag={0},,,\
+Good Ol' Games,Play with,gog.com/u/{0},,,\
+Amazon,Gift,{1}.com/hz/wishlist/ls/2XMAQ685MAZ66,,,\
+Patreon,Support,{1}.com/{0},,,\
+PayPal,Tip,{1}.me/{0},,,\
+Venmo,Join,{1}.com/{0},,".split(",")
+function Address(platform, action, url, protocol, label) {
+  this.platform = platform
+  this.action = action
   this.url = url
-  this.protocol = "https://"
-  if (this.constructor.arguments.length > 3 && protocol.length)
-    this.protocol = protocol
+  this.protocol = (protocol.length) ? protocol : "https://"
+  this.label = (label.length) ? label : "{2} on {1}"
   this.html = buildAddressHTML
 }
 function buildAddressHTML() {
-  replacements[1] = this.service
-  var replaced = new Array(this.protocol+this.url,this.label)
-  for (j = 0; j < replacements.length; j++) {
-	  for (k = 0; k < replaced.length; k++) {
-		  var index = replaced[k].indexOf("{"+j+"}")
-		  if (index > -1)
-		    replaced[k] = replaced[k].substring(0,index)+replacements[j]
-							 + replaced[k].substring(index+3,replaced[k].length)
-	  }
+  replacements[1] = this.platform
+  for (var property in this) {
+    if (typeof this[property] != "string") continue
+	 while (index = this[property].indexOf("{"), index > -1) {
+		id = parseInt(this[property].charAt(index+1))
+		this[property] = this[property].substring(0,index)+replacements[id]
+		               + this[property].substring(index+3)
+	 }
   }
-  return '<A HREF="'+replaced[0]+'">'+replaced[1]+"</"+"A>"
+  with (this) return '<A HREF="'+protocol+url+'">'+action+" "+label+"</"+"A>"
 }
-for (i = 0; i < addresses.length; i++)
-  if (i > 0) document.write("<BR>"+addresses[i].html())
-  else document.write(addresses[i].html())
+for (i=0; i<data.length; i+=5) {
+  if (i > 0) document.write("<BR>")
+  address = new Address(data[i],data[i+1],data[i+2],data[i+3],data[i+4])
+  document.write(address.html())
+}
 </SCRIPT>
 </ADDRESS>
