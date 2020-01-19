@@ -1,0 +1,17 @@
+BODY {
+ background: #161616;
+ color: #e0e0e0;
+ font-family: sans-serif;
+ margin: 0.5em }
+H1 { font-weight: 400 }
+H2 { font-weight: 400 }
+IMG {
+  float: left;
+  height: 3.4em;
+  margin-right: 0.5em }
+ADDRESS { font-style: normal }
+A:link, A:active, A:visited, A:visited:active { background-color: #161616 }
+A:link { color: #0f62fe }
+A:active { color: #0043ce }
+A:visited { color: #8a3ffc }
+A:visited:active { color: #6929c4 }
