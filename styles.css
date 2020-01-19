@@ -4,13 +4,14 @@ BODY {
  font-family: sans-serif;
  margin: 0.5em }
 DIV { position: absolute; bottom: 0; left: 0; width: 100% }
-H1 { font-weight: 400 }
-H2 { font-weight: 400 }
-IMG {
-  float: left;
-  height: 3.4em;
-  margin-right: 0.5em }
-ADDRESS { font-style: normal }
+H1 { display: inline;
+     font-size: 1em; font-weight: 400;
+     margin: 0; padding: 0.25em 0.5em;
+     background: #ccc; color: #000; }
+H2 { font-size: 1em; font-weight: 400; line-height: 1.2em;
+     margin: 0 -.25em 0 0; padding: 0.8em 0 1.8em 6em }
+IMG { float: left; height: 4em; margin: 1em 0.5em 1em 1em }
+ADDRESS { display: none; font-style: normal }
 A:link { color: #0f62fe }
 A:active { color: #0043ce }
 A:visited { color: #8a3ffc }
