@@ -6,6 +6,7 @@ BODY {
 H1 { font-weight: 400 }
 H2 { font-weight: 400 }
 IMG {
+  border-radius: 50%;
   float: left;
   height: 3.4em;
   margin-right: 0.5em }
