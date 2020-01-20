@@ -10,7 +10,7 @@ H1::before { content: ""; display: block;
              width: 0; height: 0;
              position: absolute; bottom: -0.5em; left: 0;
              border: solid 0.25em;
-             border-color: #ccc transparent transparent #ccc }
+             border-color: #393939 transparent transparent #393939 }
 H2 { font-size: 1em; font-weight: 400; line-height: 1.2em;
      margin: 0 -.25em 0 0; padding: 0.8em 0 1.8em 6em }
 IMG { float: left; height: 4em; margin: 1em 0.5em 1em 1em; border-radius: 50% }
