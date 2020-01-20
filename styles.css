@@ -11,6 +11,7 @@ H1 { display: inline; position: relative;
      font-size: 1em; font-weight: 300;
      margin: 0; padding: 0.25em 0.5em;
      background: #393939; color: #e0e0e0;
+     box-shadow: -2px 2px 2px rgba(0,0,0,0.25);
      border-radius: 0.25em 0.25em 0.25em 0 }
 H1::before { content: ""; display: block;
              width: 0; height: 0;
@@ -19,7 +20,8 @@ H1::before { content: ""; display: block;
              border-color: #393939 transparent transparent #393939 }
 H2 { font-size: 1em; font-weight: 300; line-height: 1.2em;
      margin: 0 -.25em 0 0; padding: 0.8em 0 1.8em 6em }
-IMG { float: left; height: 4em; margin: 1em 0.5em 1em 1em; border-radius: 50% }
+IMG { float: left; height: 4em; margin: 1em 0.5em 1em 1em; border-radius: 50%;
+      box-shadow: 0 0 8px rgba(0,0,0,0.25) }
 ADDRESS { display: none; font-style: normal }
 A:link { color: #0f62fe }
 A:active { color: #0043ce }
