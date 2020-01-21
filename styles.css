@@ -4,28 +4,42 @@
 @font-face { font-family: "IBM Plex Sans"; font-style: normal; font-weight: 300;
              src: local("IBM Plex Sans Light"), local("IBMPlexSans-Light"), 
                   url(/fonts/IBM_Plex_Sans/IBMPlexSans-Light.ttf) }
-BODY { background: #161616; color: #e0e0e0; cursor: default;
+:ROOT { --background: #161616; --color: #e0e0e0; --chat: #393939;
+        --shadow: rgba(0,0,0,0.25) }
+        @media (prefers-color-scheme: light) { :ROOT {
+        --background: #f4f4f4; --color: #262626; --chat: #c6c6c6;
+        --shadow: rgba(0,0,0,0.25) } }
+BODY { background: #161616; background: var(--background);
+       color: #e0e0e0; color: var(--color); cursor: default;
        font-family: "IBM Plex Sans", sans-serif; margin: 0.5em }
 DIV { position: absolute; bottom: 0; left: 0; width: 100% }
 H1 { display: inline; position: relative;
      font-size: 1em; font-weight: 300;
      margin: 0; padding: 0.25em 0.5em;
-     background: #393939; color: #e0e0e0;
+     background: #393939; background: var(--chat);
+     color: #e0e0e0; color: var(--color);
      box-shadow: 1px 1px 0 rgba(0,0,0,0.25);
+     box-shadow: 1px 1px 0 var(--shadow);
      border-radius: 0.25em 0.25em 0.25em 0 }
+     @supports (filter: drop-shadow(0 0)) { H1 {
+     box-shadow: none;
+     filter: drop-shadow(-2px 2px 2px rgba(0,0,0,0.25));
+     filter: drop-shadow(-2px 2px 2px var(--shadow)) } }
 H1::before { content: ""; display: block;
              width: 0; height: 0;
              position: absolute; bottom: -0.5em; left: 0;
              border: solid 0.25em;
-             border-color: #393939 transparent transparent #393939 }
+             border-color: #393939 transparent transparent #393939;
+             border-color: var(--chat) transparent transparent var(--chat) }
 H2 { font-size: 1em; font-weight: 300; line-height: 1.2em;
      margin: 0 -.25em 0 0; padding: 0.8em 0 1.8em 6em }
 IMG { float: left; height: 4em; margin: 1em 0.5em 1em 1em; border-radius: 50%;
-      box-shadow: 0 0 0 1px rgba(0,0,0,0.25) }
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.25); box-shadow: 0 0 0 1px var(--shadow) }
 ADDRESS { display: none; font-style: normal }
 A:link { color: #0f62fe }
 A:active { color: #0043ce }
 A:visited { color: #8a3ffc }
 A:visited:active { color: #6929c4 }
 /* Using `color` requires `background` for accessibility validation. */
-A:link, A:active, A:visited, A:visited:active { background: #161616 }
+A:link, A:active, A:visited, A:visited:active { background: #161616;
+                                                background: var(--background) }
