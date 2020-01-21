@@ -6,6 +6,9 @@
                   url(/fonts/IBM_Plex_Sans/IBMPlexSans-Light.ttf) }
 :ROOT { --background: #161616; --color: #e0e0e0; --chat: #393939;
         --shadow: rgba(0,0,0,0.25) }
+        @media (prefers-color-scheme: light) { :ROOT {
+        --background: #f4f4f4; --color: #262626; --chat: #c6c6c6;
+        --shadow: rgba(0,0,0,0.25) } }
 BODY { background: #161616; background: var(--background);
        color: #e0e0e0; color: var(--color); cursor: default;
        font-family: "IBM Plex Sans", sans-serif; margin: 0.5em }
@@ -18,8 +21,8 @@ H1 { display: inline; position: relative;
      box-shadow: -2px 2px 2px rgba(0,0,0,0.25);
      box-shadow: -2px 2px 2px var(--shadow);
      border-radius: 0.25em 0.25em 0.25em 0 }
-@supports (filter: drop-shadow(0 0 black)) {
-H1 { box-shadow: none;
+     @supports (filter: drop-shadow(0 0)) { H1 {
+     box-shadow: none;
      filter: drop-shadow(-2px 2px 2px rgba(0,0,0,0.25));
      filter: drop-shadow(-2px 2px 2px var(--shadow)) } }
 H1::before { content: ""; display: block;
