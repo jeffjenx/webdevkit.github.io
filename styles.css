@@ -23,8 +23,8 @@ H1 { display: inline; position: relative;
      border-radius: 0.25em 0.25em 0.25em 0 }
      @supports (filter: drop-shadow(0 0)) { H1 {
      box-shadow: none;
-     filter: drop-shadow(-2px 2px 2px rgba(0,0,0,0.25));
-     filter: drop-shadow(-2px 2px 2px var(--shadow)) } }
+     filter: drop-shadow(1px 1px 0 rgba(0,0,0,0.25));
+     filter: drop-shadow(1px 1px 0 var(--shadow)) } }
 H1::before { content: ""; display: block;
              width: 0; height: 0;
              position: absolute; bottom: -0.5em; left: 0;
