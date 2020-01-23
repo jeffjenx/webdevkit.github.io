@@ -30,3 +30,32 @@ A:visited { color: #8a3ffc }
 A:visited:active { color: #6929c4 }
 /* Using `color` requires `background` for accessibility validation. */
 A:link, A:active, A:visited, A:visited:active { background: #161616 }
+OBJECT { background: linear-gradient( #f1af71 0, #e7ca80 5%, #e0e9b0 25%, 
+#d3edcc 50%, #9fd7c7 75%, #5db1c2 95%, #5bb0c1 100%) }
+@supports (background: linear-gradient(black, black)) {
+.sky00, .sky24 { background: #00000c; }
+.sky01 { background: linear-gradient(#020111 85%,#191621 100%); }
+.sky02 { background: linear-gradient(#020111 60%,#20202c 100%); }
+.sky03 { background: linear-gradient(#020111 10%,#3a3a52 100%); }
+.sky04 { background: linear-gradient(#20202c,#515175 100%); }
+.sky05 { background: linear-gradient(#40405c,#6f71aa 80%,#8a76ab 100%); }
+.sky06 { background: linear-gradient(#4a4969,#7072ab 50%,#cd82a0 100%); }
+.sky07 { background: linear-gradient(#757abf,#8583be 60%,#eab0d1 100%); }
+.sky08 { background: linear-gradient(#82addb,#ebb2b1 100%); }
+.sky09 { background: linear-gradient(#94c5f8,#a6e6ff 70%,#b1b5ea 100%); }
+.sky10 { background: linear-gradient(#b7eaff,#94dfff 100%); }
+.sky11 { background: linear-gradient(#9be2fe,#67d1fb 100%); }
+.sky12 { background: linear-gradient(#90dffe,#38a3d1 100%); }
+.sky13 { background: linear-gradient(#57c1eb,#246fa8 100%); }
+.sky14 { background: linear-gradient(#2d91c2,#1e528e 100%); }
+.sky15 { background: linear-gradient(#2473ab,#1e528e 70%,#5b7983 100%); }
+.sky16 { background: linear-gradient(#1e528e,#265889 50%,#9da671 100%); }
+.sky17 { background: linear-gradient(#1e528e,#728a7c 50%,#e9ce5d 100%); }
+.sky18 { background: linear-gradient(#154277,#576e71 30%,#e1c45e 70%,#b26339); }
+.sky19 { background: 
+linear-gradient(#163C52,#4F4F47 30%,#C5752D 60%,#B7490F 80%, #2F1107); }
+.sky20 { background: linear-gradient(#071B26,#071B26 30%,#8A3B12 80%,#240E03); }
+.sky21 { background: linear-gradient(#010A10 30%,#59230B 80%,#2F1107); }
+.sky22 { background: linear-gradient(#090401 50%,#4B1D06); }
+.sky23 { background: linear-gradient(#00000c 80%,#150800); }
+}
