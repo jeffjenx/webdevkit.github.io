@@ -1,10 +1,11 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=US-ASCII">
 <TITLE>Web Developer's Toolkit</TITLE>
 <LINK REL=STYLESHEET HREF="styles.css">
 <DIV>
 <H1>Hello, world!</H1>
-<IMG SRC="jeff.jpg"
+<IMG SRC="images/jeff.jpg"
 ALT="A profile of Jeff Jenkins, a man wearing a hat against an early sunset.">
 <H2>Jeff Jenkins<BR>@webdevkit</H2>
 </DIV>
@@ -15,7 +16,10 @@ Send Jeff an Email</A><BR>
 if (SVGRect !== "undefined") {
 var img = document.getElementsByTagName("IMG")[0]
 var svg = document.createElement("OBJECT")
-svg.type = "image/svg+xml"; svg.data = "jeff.svg"
+svg.type = "image/svg+xml"; svg.data = "images/jeff.svg"
+if (CSS && CSS.supports("background", "linear-gradient(black, black)"))
+  svg.data = "images/jeff-nobg.svg"
+var now = new Date(); svg.className = "sky"+now.getHours()
 img.parentNode.replaceChild(svg, img)
 }
 replacements = Array("webdevkit","this.service","Jeff")
