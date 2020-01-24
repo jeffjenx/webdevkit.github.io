@@ -1,6 +1,7 @@
 <svg id="jeff" width="4in" height="4in" viewBox="0 0 288 288"
      xmlns="http://www.w3.org/2000/svg"
-     xmlns:xlink="http://www.w3.org/1999/xlink">
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     style="filter:drop-shadow(0.01in 0.01in 0.05in rgba(0,0,0,0.5))">
 <defs>
 <linearGradient id="linear-gradient" x1="144" y1="288" x2="144"
                 gradientUnits="userSpaceOnUse">
@@ -13,7 +14,7 @@
   <stop offset="1" stop-color="#5bb0c1"/>
 </linearGradient>
 </defs>
-<title>jeff</title>
+<title>Jeff Jenkins @webdevkit</title>
 <rect id="background" fill="url(#linear-gradient)" width="288" height="288"/>
 <path id="body" fill="#ecc19c" d="M61.88,288c12.36-61.38,66.35-46.85,68.12-100.89l24.16.12c.08,49.82,60.21,46.76,67.86,100.62Z"/>
 <path id="head" fill="#ecc19c" d="M204.68,80.33c-.75,24,4.11,61.94-10.48,82.8-15.9,27.73-50.23,51.94-79.58,27.57-20.71-14.86-35.33-39.42-35.38-65.25-2.73-49.31-1-102.2,62.67-105.51,32.94-.55,63.14,26.6,62.77,60.39Zm0,0"/>
