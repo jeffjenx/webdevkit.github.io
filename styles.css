@@ -46,9 +46,11 @@ A:link { color: #0f62fe }
 A:active { color: #0043ce }
 A:visited { color: #8a3ffc }
 A:visited:active { color: #6929c4 }
-/* Using `color` requires `background` for accessibility validation. */
+/* TODO: Figure out if this is necessary: Using `color` requires `background`
+         for accessibility validation.
 A:link, A:active, A:visited, A:visited:active { background: #161616;
                                                 background: var(--background) }
+*/
 #home OBJECT { background: linear-gradient( #f1af71 0, #e7ca80 5%, #e0e9b0 25%, 
 #d3edcc 50%, #9fd7c7 75%, #5db1c2 95%, #5bb0c1 100%) }
 @supports (background: linear-gradient(black, black)) {
