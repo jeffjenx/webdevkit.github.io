@@ -12,7 +12,8 @@
 BODY { background: #161616; background: var(--background);
        color: #e0e0e0; color: var(--color); cursor: default;
        font-family: "IBM Plex Sans", sans-serif; margin: 0.5em }
-DIV { position: absolute; bottom: 0; left: 0; width: 100% }
+#home { position: absolute; bottom: 0; left: 0; width: 100% }
+#home
 H1 { display: inline; position: relative;
      font-size: 1em; font-weight: 300;
      margin: 0; padding: 0.25em 0.5em;
@@ -25,18 +26,22 @@ H1 { display: inline; position: relative;
      box-shadow: none;
      filter: drop-shadow(1px 1px 0 rgba(0,0,0,0.25));
      filter: drop-shadow(1px 1px 0 var(--shadow)) } }
+#home 
 H1::before { content: ""; display: block;
              width: 0; height: 0;
              position: absolute; bottom: -0.5em; left: 0;
              border: solid 0.25em;
              border-color: #393939 transparent transparent #393939;
              border-color: var(--chat) transparent transparent var(--chat) }
+#home 
 H2 { font-size: 1em; font-weight: 300; line-height: 1.2em;
      margin: 0 -.25em 0 0; padding: 0.8em 0 1.8em 6em }
-IMG, OBJECT { float: left; width: 4em; height: 4em;
-              margin: 1em 0.5em 1em 1em; border-radius: 50%;
-              box-shadow: 0 0 8px rgba(0,0,0,0.25); box-shadow: 0 0 0 1px var(--shadow) }
-ADDRESS { display: none; font-style: normal }
+#home IMG,
+#home OBJECT { float: left; width: 4em; height: 4em;
+               margin: 1em 0.5em 1em 1em; border-radius: 50%;
+               box-shadow: 0 0 8px rgba(0,0,0,0.25);
+               box-shadow: 0 0 0 1px var(--shadow) }
+#home ADDRESS { display: none; font-style: normal }
 A:link { color: #0f62fe }
 A:active { color: #0043ce }
 A:visited { color: #8a3ffc }
@@ -44,7 +49,7 @@ A:visited:active { color: #6929c4 }
 /* Using `color` requires `background` for accessibility validation. */
 A:link, A:active, A:visited, A:visited:active { background: #161616;
                                                 background: var(--background) }
-OBJECT { background: linear-gradient( #f1af71 0, #e7ca80 5%, #e0e9b0 25%, 
+#home OBJECT { background: linear-gradient( #f1af71 0, #e7ca80 5%, #e0e9b0 25%, 
 #d3edcc 50%, #9fd7c7 75%, #5db1c2 95%, #5bb0c1 100%) }
 @supports (background: linear-gradient(black, black)) {
 .sky00, .sky24 { background: #00000c; }
